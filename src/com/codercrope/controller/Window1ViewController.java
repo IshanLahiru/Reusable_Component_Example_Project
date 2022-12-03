@@ -1,6 +1,9 @@
 package com.codercrope.controller;
 
 import com.codercrope.controller.components.ComponentCotnroller;
+import com.codercrope.util.Navigations;
+import com.codercrope.util.RegxValidator;
+import com.codercrope.util.Windows;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +36,7 @@ public class Window1ViewController implements WindowController {
     }
 
     @Override
-    public void performeActions(String task, Event actionEvent, String txtText) {
+    public void performeActions(String task, Event actionEvent, String txtText) throws IOException {
         if (task != null) {
             switch (task) {
                 case "TASK_PRINT":
@@ -41,9 +44,15 @@ public class Window1ViewController implements WindowController {
                     break;
                 case "TASK_LOAD_2_WINDOW":
                     System.out.println("loading the second window");
+                    Navigations.nav.navigate(Windows.WINDOW02);
                     break;
                 case "TXT_EMAIL":
-                    System.out.println(txtText);
+                    boolean val = RegxValidator.checkRegex(task, txtText);
+                    if (!val){
+                        System.out.println("invalid email");
+                    }else{
+                        System.out.println("not a invalid email");
+                    }
                     break;
             }
         }
