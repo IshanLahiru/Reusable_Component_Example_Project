@@ -25,13 +25,13 @@ public class Window1ViewController implements WindowController {
     public GridPane grid;
 
     public void initialize() throws IOException {
-        ComponentCotnroller controller = getAndLoadButton(1, 2);/*(ComponentCotnroller) fxmlLoader.getController();*/
+        ComponentCotnroller controller = getAndLoadButton(1, 2);
         controller.setController("Add", (WindowController) this, "TASK_PRINT");
 
-        ComponentCotnroller controller2 = getAndLoadButton(1, 4);/*(ComponentCotnroller) fxmlLoader.getController();*/
+        ComponentCotnroller controller2 = getAndLoadButton(1, 4);
         controller2.setController("2 Window", (WindowController) this, "TASK_LOAD_2_WINDOW");
 
-        ComponentCotnroller textBox = getAndLoadTextBox(1, 0);/*(ComponentCotnroller) fxmlLoader.getController();*/
+        ComponentCotnroller textBox = getAndLoadTextBox(1, 0);
         textBox.setController(" ", (WindowController) this, "TXT_EMAIL");
     }
 

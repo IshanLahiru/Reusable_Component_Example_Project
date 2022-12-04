@@ -21,14 +21,15 @@ public class Navigation {
     }
 
     public void InitNavigation() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/codercrope/view/Window1View.fxml"));
+        /*FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/codercrope/view/Window1View.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         //((ItemMoreDetailViewController) fxmlLoader.getController()).getObject(item.getOb());
         Stage stage = new Stage();
-        stage.setTitle("Window1");
+        stage.setTitle("Main window");
         stage.setScene(new Scene(root1));
         windows.put(WINDOW01,stage);
-        stage.show();
+        stage.show();*/
+        navigate(WINDOW01);
     }
 
     public void navigate(Windows window) throws IOException {
@@ -44,7 +45,7 @@ public class Navigation {
                     //((ItemMoreDetailViewController) fxmlLoader.getController()).getObject(item.getOb());
                     System.out.println("Initializing the window 1 ");
                     Stage stage = new Stage();
-                    stage.setTitle("Window1");
+                    stage.setTitle("Window main");
                     stage.setScene(new Scene(root1));
                     windows.put(WINDOW01,stage);
                     stage.show();
@@ -55,6 +56,7 @@ public class Navigation {
                 if (windows.containsKey(WINDOW02)) {
                     System.out.println("returning the previous made window 2");
                     windows.get(WINDOW02).show();
+                    closeWindowsExcept(WINDOW02);
                 }else{
                     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/codercrope/view/Window2View.fxml"));
                     Parent root1 = (Parent) fxmlLoader.load();

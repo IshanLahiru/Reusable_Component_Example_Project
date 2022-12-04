@@ -26,13 +26,13 @@ public class Window2ViewController implements WindowController{
     public GridPane grid;
 
     public void initialize() throws IOException {
-        ComponentCotnroller controller = getAndLoadButton(1, 2);/*(ComponentCotnroller) fxmlLoader.getController();*/
+        ComponentCotnroller controller = getAndLoadButton(1, 2);
         controller.setController("Add", (WindowController) this, "TASK_PRINT");
 
-        ComponentCotnroller controller2 = getAndLoadButton(1, 4);/*(ComponentCotnroller) fxmlLoader.getController();*/
+        ComponentCotnroller controller2 = getAndLoadButton(1, 4);
         controller2.setController("1 Window", (WindowController) this, "TASK_LOAD_1_WINDOW");
 
-        ComponentCotnroller textBox = getAndLoadTextBox(1, 0);/*(ComponentCotnroller) fxmlLoader.getController();*/
+        ComponentCotnroller textBox = getAndLoadTextBox(1, 0);
         textBox.setController("Name", (WindowController) this, "TXT_NAME");
     }
 
@@ -41,7 +41,7 @@ public class Window2ViewController implements WindowController{
         if (task != null) {
             switch (task) {
                 case "TASK_PRINT":
-                    System.out.println("task is printing");
+                    System.out.println("task is printing forme");
                     break;
                 case "TASK_LOAD_1_WINDOW":
                     System.out.println("loading the second window");
